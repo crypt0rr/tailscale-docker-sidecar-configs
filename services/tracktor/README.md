@@ -35,4 +35,6 @@ network_mode: service:tailscale
 
 This configuration routes all inbound and outbound traffic through the Tailscale interface, ensuring that the Tracktor web UI is accessible **only via your Tailscale network**.
 
-Set `TS_TAILNET` in `.env` to your Tailnet DNS suffix. Tracktor uses this value to build its allowed browser origin. If you enable the optional host port mapping, it maps `SERVICEPORT` to Tracktor's container port `3000`.
+Set `TS_TAILNET` in `.env` to your Tailnet DNS name without `.ts.net`, for example `tail123abc`. Compose appends `.ts.net` to build the allowed browser origin, such as `https://tracktor.tail123abc.ts.net`.
+
+If you enable the optional host port mapping, it maps `SERVICEPORT` to Tracktor's container port `3000`.
