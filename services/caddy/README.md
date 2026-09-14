@@ -15,7 +15,9 @@ To get this working:
 - Update the FQDN in `Caddyfile` to match your `${SERVICE}.MagicDNSname.ts.net`.
 - Update the TS_AUTHKEY in the .env file to your Tailscale key.
 
-If you change `SERVICE` in `.env`, update the hostname in `Caddyfile` as well. The application healthcheck uses the value of `SERVICE` automatically.
+If you change `SERVICE` in `.env`, update the hostname in `Caddyfile` as well. The healthcheck checks the `caddy` process regardless of the hostname.
+
+Both containers mount the socket directory, so Caddy can use the replacement socket after Tailscale restarts.
 
 The example `compose.yaml` uses a simple webserver for testing purposes.
 

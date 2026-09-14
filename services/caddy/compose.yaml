@@ -50,12 +50,12 @@ services:
       - ./site:/srv
       - ./caddy_data:/data
       - ./caddy_config:/config
-      - ./tailscale/tmp/tailscaled.sock:/var/run/tailscale/tailscaled.sock # Mount the Tailscale socket for TLS.
+      - ./tailscale/tmp:/var/run/tailscale # Share the directory so socket replacement survives Tailscale restarts.
     depends_on:
       tailscale:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "pgrep", "-f", "${SERVICE}"] # Check if ${SERVICE} process is running
+      test: ["CMD", "pgrep", "-x", "caddy"] # The process name is independent of the Tailnet hostname.
       interval: 1m # How often to perform the check
       timeout: 10s # Time to wait for the check to succeed
       retries: 3 # Number of retries before marking as unhealthy
