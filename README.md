@@ -51,11 +51,11 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
     - [🎥 Media and Entertainment](#-media-and-entertainment)
     - [💼 Productivity and Collaboration](#-productivity-and-collaboration)
     - [📊 Dashboards and Visualization](#-dashboards-and-visualization)
-    - [🛠️ Development Tools](#️-development-tools)
+    - [🛠️ Development Tools](#-development-tools)
     - [📈 Monitoring and Analytics](#-monitoring-and-analytics)
     - [🏠 Smart Home](#-smart-home)
     - [📱 Utilities](#-utilities)
-    - [🍽️ Food \& Wellness](#️-food--wellness)
+    - [🍽️ Food \& Wellness](#-food--wellness)
   - [Tailscale Information](#tailscale-information)
     - [Tailscale Funnel vs. Tailscale Serve](#tailscale-funnel-vs-tailscale-serve)
     - [Tailscale Funnel](#tailscale-funnel)
@@ -99,6 +99,7 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
 | 📰 **FreshRSS**       | A customizable feed reader with themes, extensions, and no separate database.                           | [Details](services/freshrss)       |
 | 🎥 **Frigate**        | A self-hosted NVR with real-time AI object detection for IP cameras and local video monitoring.         | [Details](services/frigate)        |
 | 🎮 **Hytale**         | A self-hosted Hytale game server.                                                                       | [Details](services/hytale)         |
+| ⛏️ **Minecraft**       | A self-hosted Minecraft Java Edition server for private Tailnet multiplayer.                            | [Details](services/minecraft)      |
 | 🖼️ **Immich**         | A self-hosted Google Photos alternative with face recognition and mobile sync.                          | [Details](services/immich)         |
 | 📺 **Jellyfin**       | An open-source media system that puts you in control of managing and streaming your media.              | [Details](services/jellyfin)       |
 | 📖 **Kavita**         | An open-source, self-hosted digital library for comics, manga, and ebooks.                              | [Details](services/kavita)         |
@@ -125,6 +126,7 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
 | 💼 Service           | 📝 Description                                                                                                                                                              | 🔗 Link                            |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
 | 💰 **Actual Budget** | A self-hosted personal finance and budgeting app focused on privacy and full data ownership.                                                                               | [Details](services/actual-budget) |
+| 🧠 **AFFiNE**        | A self-hosted workspace for documents, whiteboards, and databases.                                                                                                           | [Details](services/affine)       |
 | ⚓ **Anchor**        | An offline-first, self-hosted note-taking app with sync, attachments, sharing, and optional OIDC authentication.                                                           | [Details](services/anchor)        |
 | 📄 **BentoPDF**      | A lightweight, self-hosted web app for viewing and managing PDF documents.                                                                                                 | [Details](services/bentopdf)      |
 | ✂️ **ClipCascade**   | A self-hosted clipboard manager for syncing and organizing clipboard history.                                                                                              | [Details](services/clipcascade)   |
@@ -150,6 +152,7 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
 | 📥 **Mattermost**    | A self-hosted collaborative workflow and communication tool.                                                                                                               | [Details](services/mattermost)    |
 | 📝 **Memos**         | A lightweight, self-hosted note-taking and knowledge management platform for capturing ideas, daily notes, and personal knowledge.                                         | [Details](services/memos)         |
 | 📝 **Nanote**        | A lightweight, self-hosted note-taking app with Markdown support.                                                                                                          | [Details](services/nanote)        |
+| 📂 **NextExplorer**  | A self-hosted file explorer for managing mounted directories.                                                                                                               | [Details](services/next-explorer) |
 | 🤖 **Open WebUI**    | A self-hosted AI platform with a ChatGPT-style interface for local and cloud-based models.                                                                                 | [Details](services/open-webui)    |
 | 🔗 **Pingvin Share** | **PROJECT ARCHIVED** A self-hosted file sharing platform.                                                                                                                  | [Details](services/pingvin-share) |
 | 📅 **Radicale**      | A lightweight CalDAV and CardDAV server for self-hosted calendar, to-do, and contact sync.                                                                                 | [Details](services/radicale)      |
@@ -171,7 +174,6 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
 | 🏠 **Homepage**           | A modern, highly customizable homepage for organizing links and monitoring services.                                | [Details](services/homepage)           |
 | 🖼️ **NewWallpaperWhoDis** | A lightweight, self-hosted wallpaper management server and dynamic rotation engine built on flat-file architecture. | [Details](services/newwallpaperwhodis) |
 
-
 ### 🛠️ Development Tools
 
 | 🛠️ Service                | 📝 Description                                                                                               | 🔗 Link                              |
@@ -183,6 +185,7 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
 | 🐳 **Dockhand**           | A modern, lightweight Docker management UI for containers and Compose stacks.                               | [Details](services/dockhand)        |
 | 🐳 **Dockge**             | A lightweight, self-hosted Docker Compose stack manager with a web UI.                                      | [Details](services/dockge)          |
 | 🖥️ **Dozzle**             | A real-time log viewer for Docker containers.                                                               | [Details](services/dozzle)          |
+| 📁 **Filebrowser**         | A lightweight web file manager for a host directory.                                                        | [Details](services/filebrowser)     |
 | 🔁 **FossFLOW**           | A self-hosted tool to make beautiful isometric infrastructure diagrams.                                     | [Details](services/fossflow)        |
 | 🖥️ **GitSave**            | A self-hosted service to back up your GitHub repositories via a simple REST API and scheduled runs.         | [Details](services/gitsave)         |
 | 🖥️ **Gokapi**             | A lightweight self-hosted file sharing platform.                                                            | [Details](services/gokapi)          |
@@ -272,7 +275,7 @@ Made with [contrib.rocks](https://contrib.rocks).
 
 ## Contributing
 
-See [CONTRIBUTING.md](/CONTRIBUTING.md) for guidance on adding services with the [template](/templates/service-template/) to keep Tailscale-sidecar setups consistent.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidance on adding services with the [template](templates/service-template/) to keep Tailscale-sidecar setups consistent.
 
 ## Star History
 

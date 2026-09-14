@@ -18,7 +18,7 @@ services:
     environment:
       - TS_AUTHKEY=${TS_AUTHKEY}
       - TS_STATE_DIR=/var/lib/tailscale
-      - TS_SERVE_CONFIG=/config/serve.json # Tailsacale Serve configuration to expose the web interface on your local Tailnet - remove this line if not required
+      - TS_SERVE_CONFIG=/config/serve.json # Tailscale Serve configuration to expose the web interface on your local Tailnet - remove this line if not required
       - TS_USERSPACE=false
       - TS_ENABLE_HEALTH_CHECK=true              # Enable healthcheck endpoint: "/healthz"
       - TS_LOCAL_ADDR_PORT=127.0.0.1:41234       # The <addr>:<port> for the healthz endpoint
@@ -68,7 +68,7 @@ services:
       timeout: 3s
       interval: 15s
     restart: always
-    env_file: /.env
+    env_file: ./.env
   netbox-worker:
     <<: *netbox
     container_name: worker-${SERVICE} # Name for local container management
@@ -88,7 +88,7 @@ services:
   postgres:
     image: docker.io/postgres:17-alpine
     container_name: ${SERVICE}-postgres
-    env_file: /.env
+    env_file: ./.env
     healthcheck:
       test: pg_isready -q -t 2 -d $$POSTGRES_DB -U $$POSTGRES_USER
       start_period: 20s

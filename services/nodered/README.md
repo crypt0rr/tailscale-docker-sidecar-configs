@@ -8,4 +8,4 @@ This Docker Compose configuration sets up [Node-RED](https://github.com/node-red
 
 ## Configuration Overview
 
-In this setup, the `tailscale-node-red` service runs Tailscale, which manages secure networking for the Node-RED service. The `node-red` service uses the Tailscale network stack via Docker's `network_mode: service:` configuration. This ensures that Node-RED’s web interface is only accessible through the Tailscale network (or locally, if preferred), providing an additional layer of security and privacy for your flow-based programming environment.
+In this setup, the `tailscale-node-red` service runs Tailscale, which manages secure networking for the Node-RED service. The `node-red` service uses the Tailscale network stack via Docker's `network_mode: service:tailscale` configuration. This ensures that Node-RED’s web interface is only accessible through the Tailscale network (or locally, if preferred), providing an additional layer of security and privacy for your flow-based programming environment.

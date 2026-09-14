@@ -18,7 +18,7 @@ services:
     volumes:
       - ./config:/config # Config folder used to store Tailscale files - you may need to change the path
       - ./ts/state:/var/lib/tailscale # Tailscale requirement - you may need to change the path
-      #- ./tailscale/tmp:/tmp # Share the tmp folder with the tailscale socket for TLS. Remove # if required.
+      - ./tailscale/tmp:/tmp # Share the tmp folder with the tailscale socket for TLS.
     devices:
       - /dev/net/tun:/dev/net/tun # Network configuration for Tailscale to work
     cap_add:
@@ -46,11 +46,11 @@ services:
       - PGID=1000
       - TZ=${TZ}
     volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
-      - $PWD/site:/srv
-      - $PWD/caddy_data:/data
-      - $PWD/caddy_config:/config
-      - $PWD/tailscale/tmp/tailscaled.sock:/var/run/tailscale/tailscaled.sock # mount the socket at the right place. Comment out if not required.
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - ./caddy_data:/data
+      - ./caddy_config:/config
+      - ./tailscale/tmp/tailscaled.sock:/var/run/tailscale/tailscaled.sock # Mount the Tailscale socket for TLS.
     depends_on:
       tailscale:
         condition: service_healthy

@@ -31,7 +31,7 @@ This is especially valuable in homelabs, seedbox setups, or multi-location media
 In this deployment, a **Tailscale sidecar container** (for example, `tailscale-recyclarr`) runs the Tailscale client and joins your private Tailscale network. The Recyclarr service uses:
 
 ```plain
-network_mode: service:tailscale-recyclarr
+network_mode: service:tailscale
 ```
 
 This setup ensures that **all Recyclarr traffic flows exclusively through the Tailscale interface**, allowing it to securely reach Radarr and Sonarr instances that are also on your Tailscale network. No ports need to be exposed, and the container remains completely inaccessible from the public Internet.

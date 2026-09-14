@@ -17,4 +17,4 @@ This Docker Compose configuration sets up [**Coder**](https://github.com/coder/c
 
 ## Configuration Overview
 
-In this deployment, the `tailscale-coder` service runs the Tailscale client to establish a secure private network. The `coder` container uses `network_mode: service:tailscale-coder` to route all traffic through the Tailscale interface. This ensures that your development environments, admin UI, and web IDEs are only accessible via Tailscale, preventing public exposure.
+In this deployment, the `tailscale-coder` service runs the Tailscale client to establish a secure private network. The `coder` container uses `network_mode: service:tailscale` to route all traffic through the Tailscale interface. This ensures that your development environments, admin UI, and web IDEs are only accessible via Tailscale, preventing public exposure.

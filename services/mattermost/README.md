@@ -1,6 +1,6 @@
 # Mattermost with Tailscale Sidecar Configuration
 
-This Docker Compose configuration sets up [Mattermost](https://mattermost.com/platform-overview/) with Tailscale as a sidecar container to securely manage and access your clipboard history over a private Tailscale network. By integrating Tailscale, you can ensure that your Mattermost instance remains private and accessible only to authorized devices on your Tailscale network.
+This Docker Compose configuration sets up [Mattermost](https://mattermost.com/platform-overview/) with Tailscale as a sidecar container to securely manage team communication over a private Tailscale network. By integrating Tailscale, you can ensure that your Mattermost instance remains private and accessible only to authorized devices on your Tailscale network.
 
 ## Mattermost
 
@@ -17,7 +17,9 @@ This Docker Compose configuration sets up [Mattermost](https://mattermost.com/pl
 
 ## Configuration Overview
 
-In this setup, the `tailscale-Mattermost` service runs Tailscale, which manages secure networking for the Mattermost service. The `Mattermost` service uses the Tailscale network stack via Docker's `network_mode: service:` configuration. This ensures that Mattermost’s web interface and functionality are only accessible through the Tailscale network (or locally, if preferred), providing enhanced privacy and security for managing your clipboard history.
+In this setup, the `tailscale-Mattermost` container runs Tailscale, which manages secure networking for the Mattermost service. The `Mattermost` service uses the Tailscale network stack via Docker's `network_mode: service:tailscale` configuration. This ensures that Mattermost’s web interface and functionality are only accessible through the Tailscale network unless you enable host port mappings.
+
+The stack stores Mattermost and PostgreSQL data under the local mattermost-data directory. The path variables in `.env` are relative to this service directory, so the stack does not depend on the shell's current PWD variable.
 
 ## Troubleshooting
 

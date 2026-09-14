@@ -8,6 +8,6 @@ This Docker Compose configuration sets up [Seerr](https://github.com/seerr-team/
 
 ## Configuration Overview
 
-In this setup, the `tailscale-seerr` service runs the Tailscale daemon to provide secure, private networking. The `seerr` service is configured to use Tailscale’s network stack via Docker’s `network_mode: service:` syntax. This binds Seer’s network interface to the Tailscale container, making the web UI and API available only through your Tailscale network (or locally, if needed).
+In this setup, the `tailscale-seerr` service runs the Tailscale daemon to provide secure, private networking. The `seerr` service is configured to use Tailscale’s network stack via Docker’s `network_mode: service:tailscale` syntax. This binds Seer’s network interface to the Tailscale container, making the web UI and API available only through your Tailscale network (or locally, if needed).
 
 This architecture is ideal for self-hosters who want to access Seerr from anywhere without exposing it to the internet, maintaining both ease of access and strict privacy controls.

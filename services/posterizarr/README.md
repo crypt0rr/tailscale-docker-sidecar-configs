@@ -31,7 +31,7 @@ This approach is ideal for homelabs, media servers, and multi-location setups wh
 In this deployment, a **Tailscale sidecar container** (for example, `tailscale-posterizarr`) runs the Tailscale client and connects to your private Tailscale network. The Posterizarr service uses:
 
 ```plain
-network_mode: service:tailscale-posterizarr
+network_mode: service:tailscale
 ```
 
 This configuration ensures that **all Posterizarr traffic is routed exclusively through the Tailscale interface**, allowing it to securely communicate with Radarr and Sonarr instances over your private network. No ports are exposed to the public Internet, and the service remains fully isolated.
