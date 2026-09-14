@@ -51,11 +51,11 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
     - [🎥 Media and Entertainment](#-media-and-entertainment)
     - [💼 Productivity and Collaboration](#-productivity-and-collaboration)
     - [📊 Dashboards and Visualization](#-dashboards-and-visualization)
-    - [🛠️ Development Tools](#-development-tools)
+    - [🛠️ Development Tools](#development-tools)
     - [📈 Monitoring and Analytics](#-monitoring-and-analytics)
     - [🏠 Smart Home](#-smart-home)
     - [📱 Utilities](#-utilities)
-    - [🍽️ Food \& Wellness](#-food--wellness)
+    - [🍽️ Food \& Wellness](#food-wellness)
   - [Tailscale Information](#tailscale-information)
     - [Tailscale Funnel vs. Tailscale Serve](#tailscale-funnel-vs-tailscale-serve)
     - [Tailscale Funnel](#tailscale-funnel)
@@ -174,6 +174,8 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
 | 🏠 **Homepage**           | A modern, highly customizable homepage for organizing links and monitoring services.                                | [Details](services/homepage)           |
 | 🖼️ **NewWallpaperWhoDis** | A lightweight, self-hosted wallpaper management server and dynamic rotation engine built on flat-file architecture. | [Details](services/newwallpaperwhodis) |
 
+<a id="development-tools"></a>
+
 ### 🛠️ Development Tools
 
 | 🛠️ Service                | 📝 Description                                                                                               | 🔗 Link                              |
@@ -226,6 +228,8 @@ ScaleTail provides ready-to-run [Docker Compose](https://docs.docker.com/compose
 | 📣 **ntfy**       | A simple HTTP-based pub/sub notification service for sending push notifications.                                  | [Details](services/ntfy)        |
 | 🚗 **Tracktor**   | Self-hosted vehicle maintenance tracker.                                                                          | [Details](services/tracktor)    |
 | 🔁 **Transmute**  | A self-hosted file conversion and transformation service for handling documents, media, and other format changes. | [Details](services/transmute)   |
+
+<a id="food-wellness"></a>
 
 ### 🍽️ Food & Wellness
 
